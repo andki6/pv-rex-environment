@@ -11,17 +11,19 @@ public class AdaptiveEnvironmentController : MonoBehaviour
         foreach (var animation in animations)
         {
             animation.Init();
+            StartCoroutine(AnimateWithDelay(animation));
         }
-        foreach (var animation in animations)
-        {
-            yield return StartCoroutine(Animate(animation));
-        }
+        yield break;
     }
 
-    private IEnumerator Animate(EnvironmentAnimation animation)
+    private IEnumerator AnimateWithDelay(EnvironmentAnimation animation)
     {
-        float elapsedTime = 0;
+        // Wait for the specified start time before beginning the animation
+        yield return new WaitForSeconds(animation.StartTime);
 
+        float elapsedTime = 0f;
+
+        // Start the animation after the delay
         while (elapsedTime < animation.AnimationDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -30,6 +32,7 @@ public class AdaptiveEnvironmentController : MonoBehaviour
             yield return null;
         }
 
+        // Ensure the animation completes
         animation.UpdateAnimation(1f);
     }
 }
