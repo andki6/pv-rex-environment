@@ -1961,6 +1961,8 @@ GameObject:
   - component: {fileID: 108048777}
   - component: {fileID: 108048776}
   - component: {fileID: 108048778}
+  - component: {fileID: 108048779}
+  - component: {fileID: 108048780}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -1999,6 +2001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f6dc133a2144659f7bd2d351b4566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationDuration: 25
+  StartTime: 0
   minExposure: 0.5
   maxExposure: 1
   fogColorAtMinExposure: {r: 0.27945888, g: 0.355603, b: 0.3773585, a: 1}
@@ -2018,6 +2022,7 @@ MonoBehaviour:
   animations:
   - {fileID: 108048776}
   - {fileID: 108048778}
+  - {fileID: 108048780}
 --- !u!114 &108048778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2035,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ff929b1ad814bbf9e6df703b5c3d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationDuration: 15
+  StartTime: 5
+--- !u!114 &108048779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108048774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f93015eb06c431694ffc02f5d95b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.4
+--- !u!114 &108048780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108048774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a16ef90d65c647ea96a404ef365c235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDuration: 15
+  StartTime: 0
+  TreeParent: {fileID: 492112410}
+  growthCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.19583511
+      value: -0.0023498535
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.32500407
+      value: 0.17925061
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6666666
+      value: 0.29716983
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startVariance: 5
+  baseWidthScale: 0.75
+  widthScaleVariance: 0.4
 --- !u!1 &108966047
 GameObject:
   m_ObjectHideFlags: 0
@@ -31651,7 +31731,7 @@ Transform:
   m_GameObject: {fileID: 1848531406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8847046, y: -0.76423264, z: 17.491333}
+  m_LocalPosition: {x: 0.75, y: -0.76423264, z: 20.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34941,7 +35021,7 @@ Terrain:
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 116
-  m_DetailObjectDensity: 1
+  m_DetailObjectDensity: 0.82
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -34952,7 +35032,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 10bb0d2309e38477eab2bdc9cc87319e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
