@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f6dc133a2144659f7bd2d351b4566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationDuration: 25
+  AnimationDuration: 15
   StartTime: 0
   minExposure: 0.5
   maxExposure: 1
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDuration: 15
-  StartTime: 5
+  StartTime: 6
 --- !u!114 &108048779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,8 +2062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a16ef90d65c647ea96a404ef365c235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationDuration: 15
-  StartTime: 0
+  AnimationDuration: 25
+  StartTime: 10
   TreeParent: {fileID: 492112410}
   growthCurve:
     serializedVersion: 2
@@ -2107,9 +2107,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  startVariance: 5
-  baseWidthScale: 0.75
-  widthScaleVariance: 0.4
+  startVariance: 15
+  baseWidthScale: 1
+  widthScaleVariance: 0.3
 --- !u!1 &108966047
 GameObject:
   m_ObjectHideFlags: 0
