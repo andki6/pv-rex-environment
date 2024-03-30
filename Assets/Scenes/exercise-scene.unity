@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41685238, g: 0.101627484, b: 0.06320743, a: 1}
+  m_IndirectSpecularColor: {r: 0.18489268, g: 0.12672207, b: 0.152793, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -82273,8 +82273,8 @@ MonoBehaviour:
   AnimationDuration: 5
   StartTime: 0
   CameraGameObject: {fileID: 644507414}
-  StartColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
-  EndColor: {r: 1, g: 0, b: 0.03164482, a: 1}
+  StartColor: {r: 0.45882353, g: 0.73333335, b: 1, a: 1}
+  EndColor: {r: 0.6039216, g: 0.47058824, b: 0.46666667, a: 1}
 --- !u!1 &1622207627
 GameObject:
   m_ObjectHideFlags: 0
