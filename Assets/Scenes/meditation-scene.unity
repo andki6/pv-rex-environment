@@ -37656,7 +37656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsPopup: {fileID: 386245106}
-  breathingNarration: {fileID: 8300000, guid: 37d31cd14db71492b87d0dbe919b61bb, type: 3}
 --- !u!1 &2137465280
 GameObject:
   m_ObjectHideFlags: 0

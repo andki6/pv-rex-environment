@@ -40,9 +40,15 @@ public class GrassGrow : EnvironmentAnimation
             updateWidth = boxSideLength;
             updateHeight = boxSideLength;
 
-            // Clear the entire terrain's grass initially
+            // Initialize an empty grass map
             int[,] emptyGrassMap = new int[detailWidth, detailHeight];
-            _terrain.terrainData.SetDetailLayer(0, 0, detailLayer, emptyGrassMap);
+
+            int detailLayerCount = _terrain.terrainData.detailPrototypes.Length; // Get the number of detail layers
+            for (int layer = 0; layer < detailLayerCount; layer++)
+            {
+                // Clear each detail layer across the entire terrain
+                _terrain.terrainData.SetDetailLayer(0, 0, layer, emptyGrassMap);
+            }
 
             terrainMaterial = _terrain.materialTemplate;
             if (terrainMaterial != null && terrainMaterial.HasProperty("_Blend"))
@@ -51,9 +57,6 @@ public class GrassGrow : EnvironmentAnimation
             }
         }
     }
-
-
-
 
     public override void UpdateAnimation(float progress)
     {
@@ -73,17 +76,23 @@ public class GrassGrow : EnvironmentAnimation
 
     private void UpdateGrassDensity(float progress)
     {
-        // Update only the specified patch of grass
-        int[,] growingGrassMap = new int[updateWidth, updateHeight];
+        int detailLayerCount = _terrain.terrainData.detailPrototypes.Length; // Get the number of detail layers
 
-        for (int y = 0; y < updateHeight; y++)
+        for (int layer = 0; layer < detailLayerCount; layer++)
         {
-            for (int x = 0; x < updateWidth; x++)
-            {
-                growingGrassMap[x, y] = (int)(maxGrassDensity * progress);
-            }
-        }
+            // Update only the specified patch of grass
+            int[,] growingGrassMap = new int[updateWidth, updateHeight];
 
-        _terrain.terrainData.SetDetailLayer(updateStartX, updateStartY, detailLayer, growingGrassMap);
+            for (int y = 0; y < updateHeight; y++)
+            {
+                for (int x = 0; x < updateWidth; x++)
+                {
+                    growingGrassMap[x, y] = (int)(maxGrassDensity * progress);
+                }
+            }
+
+            _terrain.terrainData.SetDetailLayer(updateStartX, updateStartY, layer, growingGrassMap);
+        }
     }
+
 }
