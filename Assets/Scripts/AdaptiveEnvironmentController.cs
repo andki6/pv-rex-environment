@@ -11,6 +11,14 @@ public class AdaptiveEnvironmentController : MonoBehaviour
         foreach (var animation in animations)
         {
             animation.Init();
+        }
+        yield break;
+    }
+
+    public IEnumerator StartAnimations()
+    {
+        foreach (var animation in animations)
+        {
             StartCoroutine(AnimateWithDelay(animation));
         }
         yield break;
