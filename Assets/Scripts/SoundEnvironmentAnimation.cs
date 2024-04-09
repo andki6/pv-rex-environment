@@ -31,6 +31,7 @@ public class SoundEnvironmentAnimation : EnvironmentAnimation
 
     public override void UpdateAnimation(float progress)
     {
+        if (progress == 0f) return;
         if (!isPlaying && audioSource != null)
         {
             audioSource.Play();

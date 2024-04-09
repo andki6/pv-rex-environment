@@ -3,20 +3,18 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CustomEditor(typeof(MeditationAdminController))]
-public class MeditationAdminControllerEditor : Editor
+[CustomEditor(typeof(ExerciseAdminController))]
+public class ExerciseAdminControllerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        MeditationAdminController script = (MeditationAdminController)target;
+        ExerciseAdminController script = (ExerciseAdminController)target;
 
         DisplayStatusText(script);
 
         StartStopButton(script);
 
         DisplayHeartRate();
-
-        LoadExerciseSceneButton();
 
         // Save changes made by the editor
         if (GUI.changed)
@@ -25,7 +23,7 @@ public class MeditationAdminControllerEditor : Editor
         }
     }
 
-    private void DisplayStatusText(MeditationAdminController script)
+    private void DisplayStatusText(ExerciseAdminController script)
     {
         // Style for the status text
         GUIStyle statusTextStyle = new GUIStyle(GUI.skin.label)
@@ -43,15 +41,16 @@ public class MeditationAdminControllerEditor : Editor
         EditorGUILayout.LabelField(statusText, statusTextStyle, GUILayout.Height(30));
     }
 
-    private void LoadExerciseSceneButton()
+    private void LoadMeditationSceneButton()
     {
-        if (GUILayout.Button("Switch to exercise scene", GUILayout.Height(40)))
+        //This function is broken... the lighting doesn't load correctly so this button was removed.
+        if (GUILayout.Button("Switch to meditation scene", GUILayout.Height(40)))
         {
             // Ensure this operation is only available during Play mode
             if (Application.isPlaying)
             {
-                // Load the exercise scene
-                SceneManager.LoadScene("Assets/Scenes/exercise-scene.unity");
+                // Load the meditation scene
+                SceneManager.LoadScene("Assets/Scenes/meditation-scene.unity");
             }
             else
             {
@@ -60,39 +59,11 @@ public class MeditationAdminControllerEditor : Editor
         }
     }
 
-    private void StartStopButton(MeditationAdminController script)
+    private void StartStopButton(ExerciseAdminController script)
     {
         if (GUILayout.Button("Start/Stop", GUILayout.Height(40)) && Application.isPlaying) // Ensure this operation is only available during Play mode
         {
-            GameObject firstPersonController = GameObject.Find("FirstPersonController");
-
-            if (firstPersonController != null)
-            {
-                GuidedBreathing guidedBreathing = firstPersonController.GetComponent<GuidedBreathing>();
-
-                if (guidedBreathing != null)
-                {
-                    if (script.isStarted)
-                    {
-                        guidedBreathing.EndNarration();
-                    }
-                    else
-                    {
-                        guidedBreathing.StartNarration();
-                    }
-                }
-                else
-                {
-                    Debug.LogError("GuidedBreathing component not found on FirstPersonController.");
-                }
-            }
-            else
-            {
-                Debug.LogError("FirstPersonController GameObject not found.");
-            }
-
-
-            GameObject environment = GameObject.Find("Environment");
+            GameObject environment = GameObject.Find("Terrain");
 
             if (environment != null)
             {
