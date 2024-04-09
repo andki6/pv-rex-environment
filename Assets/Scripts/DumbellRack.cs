@@ -5,6 +5,7 @@ public class DumbbellRack : MonoBehaviour
 {
     public Text exercisePromptText;
     public string exercisePromptMessage = "Would you like to do some exercises? Press E to begin.";
+    public ExerciseManager exerciseManager;
 
     private bool playerNearby = false;
 
@@ -31,7 +32,7 @@ public class DumbbellRack : MonoBehaviour
     {
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Starting exercise...");
+            exerciseManager.StartExerciseRoutine();
         }
     }
 }
