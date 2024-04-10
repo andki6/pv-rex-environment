@@ -34675,6 +34675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959025952}
   - component: {fileID: 1959025951}
+  - component: {fileID: 1959025953}
   m_Layer: 0
   m_Name: Shimmer
   m_TagString: Untagged
@@ -34710,6 +34711,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1959025953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959025950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85d8db2a161f8040bea5a05fc72652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devName: 
+  comPort: COM3
+  samplingRate: 51.2
+  enabledSensors: 512
+  accelerometerRange: 0
+  gsrRange: 0
+  gyroscopeRange: 0
+  magnetometerRange: 0
+  enableLowPowerAccel: 0
+  enableLowPowerGyro: 0
+  enableLowPowerMag: 0
+  enableInternalExpPower: 1
+  onDataRecieved:
+    m_PersistentCalls:
+      m_Calls: []
+  onStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1962750784
 GameObject:
   m_ObjectHideFlags: 0

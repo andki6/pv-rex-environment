@@ -3,7 +3,6 @@ using UnityEngine;
 public class GrassGrow : EnvironmentAnimation
 {
     private Terrain _terrain;
-    private int detailLayer = 0;
     private int maxGrassDensity = 75;
     private Material terrainMaterial;
 

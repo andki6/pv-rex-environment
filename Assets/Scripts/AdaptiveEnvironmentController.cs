@@ -16,6 +16,8 @@ public class AdaptiveEnvironmentController : MonoBehaviour
         yield break;
     }
 
+    public IEnumerator InitializeAnimations() => Start();
+
     public IEnumerator StartAnimations()
     {
         StartCoroutine(Start());

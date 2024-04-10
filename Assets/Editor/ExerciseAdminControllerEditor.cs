@@ -74,10 +74,39 @@ public class ExerciseAdminControllerEditor : Editor
                     if (!script.isStarted)
                     {
                         script.StartCoroutine(controller.StartAnimations());
+                        GameObject dumbbellRack = GameObject.Find("DumbbellRack");
+                        if (dumbbellRack != null)
+                        {
+                            ExerciseManager exerciseManager = dumbbellRack.GetComponent<ExerciseManager>();
+                            if (exerciseManager != null && Application.isPlaying)
+                            {
+                                script.StartCoroutine(exerciseManager.StartExerciseRoutine());
+                            }
+                            else
+                            {
+                                Debug.LogError("ExerciseManager component not found on DumbbellRack.");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("DumbbellRack GameObject not found.");
+                        }
                     }
                     else
                     {
+                        GameObject dumbbellRack = GameObject.Find("DumbbellRack");
+                        ExerciseManager exerciseManager = dumbbellRack.GetComponent<ExerciseManager>();
+                        if (exerciseManager != null && Application.isPlaying)
+                        {
+                            exerciseManager.StopExerciseRoutine();
+                        }
+                        else
+                        {
+                            Debug.LogError("ExerciseManager component not found on DumbbellRack.");
+                        }
+
                         controller.StopAllCoroutines();
+                        script.StartCoroutine(controller.InitializeAnimations());
                     }
                 }
                 else
@@ -97,7 +126,7 @@ public class ExerciseAdminControllerEditor : Editor
 
     private void DisplayHeartRate()
     {
-        GameObject shimmerObject = GameObject.Find("Shimmer");
+        GameObject shimmerObject = GameObject.Find("ShimmerDevice");
         if (shimmerObject != null)
         {
             ShimmerHeartRateMonitor heartRateMonitor = shimmerObject.GetComponent<ShimmerHeartRateMonitor>();

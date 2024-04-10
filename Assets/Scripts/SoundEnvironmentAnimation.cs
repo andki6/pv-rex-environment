@@ -22,6 +22,7 @@ public class SoundEnvironmentAnimation : EnvironmentAnimation
 
             // Start with the AudioSource volume at 0
             audioSource.volume = 0f;
+            audioSource.Stop();
         }
         else
         {
