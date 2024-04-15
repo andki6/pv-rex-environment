@@ -34677,7 +34677,7 @@ GameObject:
   - component: {fileID: 1959025951}
   - component: {fileID: 1959025953}
   m_Layer: 0
-  m_Name: Shimmer
+  m_Name: ShimmerDevice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
