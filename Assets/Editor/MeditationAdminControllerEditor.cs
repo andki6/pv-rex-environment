@@ -1,4 +1,4 @@
-using System;
+using ShimmeringUnity;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -126,7 +126,7 @@ public class MeditationAdminControllerEditor : Editor
 
     private void DisplayHeartRate()
     {
-        GameObject shimmerObject = GameObject.Find("Shimmer");
+        GameObject shimmerObject = GameObject.Find("ShimmerDevice");
         if (shimmerObject != null)
         {
             ShimmerHeartRateMonitor heartRateMonitor = shimmerObject.GetComponent<ShimmerHeartRateMonitor>();
@@ -143,7 +143,7 @@ public class MeditationAdminControllerEditor : Editor
 
                 GUILayout.Space(10);
 
-                EditorGUILayout.LabelField("Heart Rate: " + heartRateMonitor.HeartRate, heartRateTextStyle, GUILayout.Height(30));
+                EditorGUILayout.LabelField("Heart Rate: " + heartRateMonitor.heartRate, heartRateTextStyle, GUILayout.Height(30));
 
                 GUILayout.Space(10);
 
@@ -153,7 +153,7 @@ public class MeditationAdminControllerEditor : Editor
 
                 if (GUILayout.Button("Recalibrate resting HR", GUILayout.Height(40)))
                 {
-                    HeartRateValues.RestingHeartRate = heartRateMonitor.HeartRate;
+                    HeartRateValues.RestingHeartRate = heartRateMonitor.heartRate;
 
                     EditorUtility.SetDirty(heartRateMonitor);
                 }

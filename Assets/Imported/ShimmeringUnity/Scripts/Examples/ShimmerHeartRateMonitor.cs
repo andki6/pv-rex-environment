@@ -19,7 +19,7 @@ namespace ShimmeringUnity
         private ShimmerDevice shimmerDevice;
 
         [SerializeField]
-        private int heartRate;
+        public int heartRate;
         Filter LPF_PPG;
         Filter HPF_PPG;
         PPGToHRAlgorithm PPGtoHeartRateCalculation;

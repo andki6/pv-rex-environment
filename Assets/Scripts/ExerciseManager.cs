@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using ShimmeringUnity;
 
 public class ExerciseManager : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class ExerciseManager : MonoBehaviour
         statsPopup.SetActive(false);
         exercisePromptText.gameObject.SetActive(false);
 
-        HeartRateValues.InitialHeartRate = heartRateMonitor.HeartRate;
+        HeartRateValues.InitialHeartRate = heartRateMonitor.heartRate;
 
         //player.transform.position = spawnLocation;
 
@@ -90,7 +91,7 @@ public class ExerciseManager : MonoBehaviour
             yield return null;
         }
 
-        HeartRateValues.FinalHeartRate = heartRateMonitor.HeartRate;
+        HeartRateValues.FinalHeartRate = heartRateMonitor.heartRate;
 
         HeartRateValues.AverageHeartRate = (HeartRateValues.FinalHeartRate + HeartRateValues.InitialHeartRate) / 2;
 
