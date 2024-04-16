@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f6dc133a2144659f7bd2d351b4566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationDuration: 15
+  AnimationDuration: 60
   StartTime: 0
   minExposure: 0.5
   maxExposure: 1
@@ -2035,8 +2035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ff929b1ad814bbf9e6df703b5c3d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationDuration: 10
-  StartTime: 6
+  AnimationDuration: 60
+  StartTime: 20
   updateStartX: 0
   updateStartY: 0
   updateWidth: 0
@@ -2066,8 +2066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a16ef90d65c647ea96a404ef365c235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationDuration: 25
-  StartTime: 10
+  AnimationDuration: 60
+  StartTime: 120
   TreeParent: {fileID: 492112410}
   growthCurve:
     serializedVersion: 2
