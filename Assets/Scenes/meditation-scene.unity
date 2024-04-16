@@ -34674,8 +34674,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959025952}
-  - component: {fileID: 1959025951}
   - component: {fileID: 1959025953}
+  - component: {fileID: 1959025954}
   m_Layer: 0
   m_Name: ShimmerDevice
   m_TagString: Untagged
@@ -34683,19 +34683,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1959025951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959025950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5cfe1119c3f9450bbdc53aafe992bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeartRate: 60
 --- !u!4 &1959025952
 Transform:
   m_ObjectHideFlags: 0
@@ -34741,6 +34728,20 @@ MonoBehaviour:
   onStateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1959025954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959025950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5f6e6ae33d7e40827d4067c58bfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shimmerDevice: {fileID: 0}
+  heartRate: 0
 --- !u!1 &1962750784
 GameObject:
   m_ObjectHideFlags: 0
