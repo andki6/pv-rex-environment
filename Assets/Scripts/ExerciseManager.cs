@@ -93,7 +93,7 @@ public class ExerciseManager : MonoBehaviour
 
         HeartRateValues.FinalHeartRate = heartRateMonitor.heartRate;
 
-        HeartRateValues.AverageHeartRate = (HeartRateValues.FinalHeartRate + HeartRateValues.InitialHeartRate) / 2;
+        HeartRateValues.AverageHeartRate = (HeartRateValues.FinalHeartRate + HeartRateValues.InitialHeartRate) / 2 + 1;
 
         progressBar.gameObject.SetActive(false);
         exerciseText.gameObject.SetActive(false);

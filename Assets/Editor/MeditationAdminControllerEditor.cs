@@ -18,11 +18,7 @@ public class MeditationAdminControllerEditor : Editor
 
         LoadExerciseSceneButton();
 
-        // Save changes made by the editor
-        if (GUI.changed)
-        {
-            EditorUtility.SetDirty(script);
-        }
+        EditorUtility.SetDirty(script);
     }
 
     private void DisplayStatusText(MeditationAdminController script)

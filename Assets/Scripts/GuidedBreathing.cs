@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using ShimmeringUnity;
 
 public class GuidedBreathing : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GuidedBreathing : MonoBehaviour
     private float narrationStartTime; // To keep track of when the narration starts
     private float narrationEndTime; // To calculate total time elapsed
 
+    private ShimmerHeartRateMonitor heartRateMonitor;
+
     private void Start()
     {
         meditationStats = statsPopup.transform.Find("MeditationStats").GetComponent<TMP_Text>();
@@ -29,6 +32,8 @@ public class GuidedBreathing : MonoBehaviour
 
         // Configure the AudioSource component
         audioSource.playOnAwake = false; // Don't play the audio immediately when the game starts
+
+        heartRateMonitor = GameObject.Find("ShimmerDevice").GetComponent<ShimmerHeartRateMonitor>();
     }
 
     private void Update()
@@ -40,7 +45,6 @@ public class GuidedBreathing : MonoBehaviour
             narrationStarted = false; // Reset the flag
         }
 
-        // Close popup if "C" is pressed or automatically after 60 seconds
         if (countdown <= 0)
         {
             statsPopup.SetActive(false);
@@ -58,6 +62,8 @@ public class GuidedBreathing : MonoBehaviour
         narrationStartTime = Time.time; // Record the start time of the narration
         narrationStarted = true; // Indicates that the narration has begun
 
+        HeartRateValues.InitialHeartRate = heartRateMonitor.heartRate;
+
         statsPopup.SetActive(false);
     }
 
@@ -73,8 +79,12 @@ public class GuidedBreathing : MonoBehaviour
         int minutes = Mathf.FloorToInt(totalTimeElapsed / 60);
         int seconds = Mathf.FloorToInt(totalTimeElapsed % 60);
 
+        HeartRateValues.FinalHeartRate = heartRateMonitor.heartRate;
+
+        HeartRateValues.AverageHeartRate = (HeartRateValues.FinalHeartRate + HeartRateValues.InitialHeartRate) / 2 + 1;
+
         // Show stats popup.
-         meditationStats.text = $"Total time elapsed: {minutes}m {seconds}s\n" +
+        meditationStats.text = $"Total time elapsed: {minutes}m {seconds}s\n" +
                                 $"Calibrated resting heart rate: {HeartRateValues.RestingHeartRate} bpm\n" +
                                 $"Initial heart rate: {HeartRateValues.InitialHeartRate} bpm\n" +
                                 $"Final heart rate: {HeartRateValues.FinalHeartRate} bpm\n" +

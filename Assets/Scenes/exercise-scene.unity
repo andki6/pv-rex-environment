@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17544945, g: 0.13501325, b: 0.16830605, a: 1}
+  m_IndirectSpecularColor: {r: 0.17542273, g: 0.13499193, b: 0.16827083, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -79685,10 +79685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85d8db2a161f8040bea5a05fc72652b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devName: 
+  devName: Shimmer_2049
   comPort: COM3
-  samplingRate: 51.2
-  enabledSensors: 512
+  samplingRate: 51.28
+  enabledSensors: 768
   accelerometerRange: 0
   gsrRange: 0
   gyroscopeRange: 0
@@ -79715,7 +79715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da5f6e6ae33d7e40827d4067c58bfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shimmerDevice: {fileID: 0}
+  shimmerDevice: {fileID: 1565824653}
   heartRate: 0
 --- !u!1 &1568132060
 GameObject:
